@@ -8,15 +8,26 @@ if (POLICY CMP0141)
   set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
-option(str-utils-static_BUILD_TESTS "Build tests" OFF)
-if(str-utils-static_BUILD_TESTS)
+# Name project as source dir name
+get_filename_component(PROJECT_NAME ${CMAKE_SOURCE_DIR} NAME)
+
+# Option for building tests
+option(${PROJECT_NAME}_BUILD_TESTS "Build tests" OFF)
+if(${PROJECT_NAME}_BUILD_TESTS)
 	list(APPEND VCPKG_MANIFEST_FEATURES "tests")
 	enable_testing()
 endif()
 
-project ("str-utils-static")
-
+project (${PROJECT_NAME})
 set(${PROJECT_NAME}_DEPENDENCIES "")
+
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+	add_definitions(-D_ITERATOR_DEBUG_LEVEL=2)
+	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MDd")
+else()
+	add_definitions(-D_ITERATOR_DEBUG_LEVEL=0)
+	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MD")
+endif()
 
 add_subdirectory(src)
 
