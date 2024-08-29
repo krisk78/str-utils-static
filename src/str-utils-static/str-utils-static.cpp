@@ -8,7 +8,7 @@
 #include <Windows.h>
 #endif
 
-#include <str-utils-static.hpp>
+#include <str-utils-static/str-utils-static.hpp>
 
 std::string get_message(const char* fmt...)
 // returns a string matching sprintf(buf, fmt...) - char * must be used for strings

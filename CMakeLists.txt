@@ -1,7 +1,4 @@
-﻿# CMakeList.txt : projet CMake pour utils, incluez la source et définissez
-# la logique spécifique au projet ici.
-#
-cmake_minimum_required (VERSION 3.8)
+﻿cmake_minimum_required (VERSION 3.8)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -26,7 +23,3 @@ add_subdirectory(src)
 if(${PROJECT_NAME}_BUILD_TESTS)
 	add_subdirectory(tests)
 endif()
-
-#if (CMAKE_VERSION VERSION_GREATER 3.12)
-#  set_property(TARGET utils PROPERTY CXX_STANDARD 20)
-#endif()
