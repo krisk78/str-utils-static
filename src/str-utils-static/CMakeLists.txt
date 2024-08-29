@@ -27,11 +27,17 @@ install(TARGETS ${PROJECT_NAME}
 install(EXPORT ${PROJECT_NAME}_targets FILE ${PROJECT_NAME}-targets.cmake NAMESPACE ${PROJECT_NAME}:: DESTINATION share/${PROJECT_NAME})
 
 # Generate the config file
-file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake"
-    "include(CMakeFindDependencyMacro)\n"
-    "find_dependency(${${PROJECT_NAME}_DEPENDENCIES} CONFIG REQUIRED)\n"
-    "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}-targets.cmake\")\n"
-)
+if("${${PROJECT_NAME}_DEPENDENCIES}" STREQUAL "")
+    file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake"
+        "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}-targets.cmake\")\n"
+    )
+else()
+    file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake"
+        "include(CMakeFindDependencyMacro)\n"
+        "find_dependency(${${PROJECT_NAME}_DEPENDENCIES} CONFIG REQUIRED)\n"
+        "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}-targets.cmake\")\n"
+    )
+endif()
 
 # Install the generated config file
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake" DESTINATION share/${PROJECT_NAME})
