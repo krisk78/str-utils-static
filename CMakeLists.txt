@@ -8,8 +8,9 @@ if (POLICY CMP0141)
   set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
-# Set project name
+# Set project name and its dependencies
 set(PROJECT_NAME "str-utils-static")
+set(${PROJECT_NAME}_DEPENDENCIES "")
 
 # Option for building tests
 option(${PROJECT_NAME}_BUILD_TESTS "Build tests" OFF)
@@ -18,8 +19,7 @@ if(${PROJECT_NAME}_BUILD_TESTS)
 	enable_testing()
 endif()
 
-project (${PROJECT_NAME})
-set(${PROJECT_NAME}_DEPENDENCIES "")
+project(${PROJECT_NAME})
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 	add_definitions(-D_ITERATOR_DEBUG_LEVEL=2)
