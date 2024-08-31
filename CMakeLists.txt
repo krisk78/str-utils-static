@@ -21,14 +21,6 @@ endif()
 
 project(${PROJECT_NAME})
 
-if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-	add_definitions(-D_ITERATOR_DEBUG_LEVEL=2)
-	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MDd")
-else()
-	add_definitions(-D_ITERATOR_DEBUG_LEVEL=0)
-	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MD")
-endif()
-
 add_subdirectory(src)
 
 if(${PROJECT_NAME}_BUILD_TESTS)

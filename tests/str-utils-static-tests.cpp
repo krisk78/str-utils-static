@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include <str-utils-static/str-utils-static.hpp>
+#include <str-utils-static.hpp>
 
 TEST(Testing_get_message, Format_Is_Empty)
 {
