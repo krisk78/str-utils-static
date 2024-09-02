@@ -1,7 +1,7 @@
 set(${PROJECT_NAME}_LINK_LIBS "")
 
 foreach(_DEP_LIB ${${PROJECT_NAME}_DEPENDENCIES})
-    find_package(${_DEP_LIB} REQUIRED)
+    find_package(${_DEP_LIB} CONFIG REQUIRED)
     list(APPEND ${PROJECT_NAME}_LINK_LIBS ${_DEP_LIB}::${_DEP_LIB})
 endforeach()
 
