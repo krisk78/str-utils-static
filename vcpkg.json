@@ -1,8 +1,8 @@
 {
   "name": "str-utils-static",
-  "version": "1.0.0",
+  "version": "1.0.8-beta",
   "description": "Static library that provides few string functions",
-  "homepage": "https://github.com/krisk78/Libs-2/tree/master/str-utils-static",
+  "homepage": "https://github.com/krisk78/str-utils-static",
   "license": "MIT",
   "dependencies": [
     {

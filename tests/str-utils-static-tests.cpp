@@ -67,9 +67,3 @@ TEST(Testing_to_upper, Mixed_String)
 }
 
 // TODO str_to_wstr tests
-
-//int main(int argc, char** argv)
-//{
-//	::testing::InitGoogleTest(&argc, argv);
-//	return RUN_ALL_TESTS();
-//}
