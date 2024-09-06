@@ -16,7 +16,7 @@ Returns the passed string in lowercase
 Returns the passed string in uppercase
 
 ### std::wstring str_to_wstr(const std::string& str, unsigned int codepage)
-Returns the passed string converted in utf-16 using the given codepage
+Returns the passed string converted in utf-16 using the given codepage<br>
 Only available for Windows targets
 
 ## Remove extra spaces
