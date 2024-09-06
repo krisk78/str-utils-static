@@ -41,5 +41,5 @@ Same as trim but leaving the passed string unchanged
 
 ## Split
 
-### std::vector<std::string> split(const std::string& str, const char delim)
+### std::vector&lt;std::string&gt; split(const std::string& str, const char delim)
 Cuts the given string using the delimitation char and returns a vector containing each part
