@@ -1,6 +1,6 @@
 #pragma once
 
-/*! \file str_utils.h
+/*! \file str-utils-static.hpp
 *	\brief Few string functions. See functions documentation for details.
 *	\author Christophe COUAILLET
 */
