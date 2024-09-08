@@ -13,6 +13,8 @@
 #include <algorithm>
 #include <vector>
 
+namespace str_utils
+{
 /*! \brief Returns a string matching sprintf(buf, fmt...) - c-string type (char *) must be used for strings.
 	\param fmt...	list of parameters in the sprintf style: the 1st is the format string and nexts are the variables to print as specified by the format string.
 	\sa Refer to <a href="https://en.cppreference.com/w/cpp/io/c/fprintf" target="_blank">cppreference.com</a> for details.
@@ -82,3 +84,4 @@ static inline std::string trimc(std::string s)
 /*! \brief Returns the list of elements of the given string delimited by the given char. */
 std::vector<std::string> split(const std::string& s, const char delim);
 
+}
