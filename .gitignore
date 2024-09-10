@@ -1,7 +1,6 @@
 .vs/
 .git/
 out/
+/.git
 /.vs
 /out
-/.gitignore
-/.gitignore
