@@ -1,3 +1,7 @@
 .vs/
 .git/
 out/
+/.vs
+/out
+/.gitignore
+/.gitignore
